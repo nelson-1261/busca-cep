@@ -11,8 +11,6 @@ def inserir_endereco(endereco):
     conexao_bd = mysql.connector.connect(host="localhost", database="cep", user="root", password='xxxx')
     cursor=conexao_bd.cursor()
 
-    complemento = getattr(endereco, 'complemento', '')
-
     query= (f"insert into cep (cep, logradouro, numero, complemento, bairro, localidade, uf) "
            f"values ({endereco["cep"]}, '{endereco["logradouro"]}', '{endereco["unidade"]}', "
            f"'{endereco["complemento"]}', '{endereco["bairro"]}', '{endereco["localidade"]}', " 
